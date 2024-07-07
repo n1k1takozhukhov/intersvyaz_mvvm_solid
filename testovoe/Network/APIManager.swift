@@ -4,7 +4,7 @@ protocol APIManagerProtocol {
     func fetchImage(completion: @escaping (Result<[ImageModel], Error>) -> Void)
 }
 
-class APIManager: APIManagerProtocol {
+final class APIManager: APIManagerProtocol {
     func fetchImage(completion: @escaping (Result<[ImageModel], Error>) -> Void) {
         let urlString = "https://jsonplaceholder.typicode.com/photos"
         

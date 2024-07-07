@@ -1,6 +1,6 @@
 import Foundation
 
-class GalleryViewModel {
+final class GalleryViewModel {
     
     //MARK: Variables
     private let imageManager: APIManagerProtocol
