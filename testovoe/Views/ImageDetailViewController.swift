@@ -5,11 +5,12 @@ final class ImageDetailViewController: UIViewController {
     
     //MARK: Variables
     private let imageModel: ImageModel
-
+    
     
     //MARK: UI Components
     private let imageView = makeImageView()
     private let titleLabel = makeLabel()
+    private let activityIndicator = makeActivityIndicator()
     
     
     //MARK: LifeCycle
@@ -46,8 +47,11 @@ final class ImageDetailViewController: UIViewController {
     }
     
     private func setImageView(with image: ImageModel) {
+        activityIndicator.startAnimating()
         if let url = URL(string: image.url) {
-            imageView.sd_setImage(with: url, placeholderImage: nil)
+            imageView.sd_setImage(with: url) { [weak self] _, _, _, _ in
+                self?.activityIndicator.stopAnimating()
+            }
         }
     }
     
@@ -64,6 +68,7 @@ private extension ImageDetailViewController {
     func setupConstrain() {
         setupImageView()
         setupTitleLabel()
+        setupActivityIndicator()
     }
     
     func setupImageView() {
@@ -84,6 +89,14 @@ private extension ImageDetailViewController {
             make.leading.trailing.equalToSuperview().inset(50)
         }
     }
+    
+    func setupActivityIndicator() {
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.snp.makeConstraints { make in
+            make.center.equalTo(imageView)
+        }
+    }
 }
 
 
@@ -97,9 +110,15 @@ private extension ImageDetailViewController {
     static func makeLabel() -> UILabel {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.font = .systemFont(ofSize: 20)
+        view.font = .systemFont(ofSize: 16)
         view.numberOfLines = 0
         return view
     }
+    
+    static func makeActivityIndicator() -> UIActivityIndicatorView {
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.hidesWhenStopped = true
+        return indicator
+    }
 }
-

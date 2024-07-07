@@ -72,6 +72,7 @@ extension GalleryViewController: UICollectionViewDataSource {
 }
 
 
+//MARK: - UICollectionViewDelegate
 extension GalleryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectImage = viewModel.image(at: indexPath.row)

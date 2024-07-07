@@ -3,9 +3,6 @@ import SnapKit
 
 final class StartViewController: UIViewController {
     
-    //MARK: Variables
-    
-    
     //MARK: UI Components
     private lazy var pushButton = makeButton()
     
@@ -17,9 +14,11 @@ final class StartViewController: UIViewController {
         updateUI()
     }
     
+    
     //MARK: Selectors
     private func updateUI() {
-        pushButton.setTitle("view".uppercased(), for: .normal)
+        view.backgroundColor = .systemBackground
+        pushButton.setTitle("view gallery".uppercased(), for: .normal)
         pushButton.tintColor = .systemBlue
     }
     
@@ -40,10 +39,9 @@ private extension StartViewController {
         view.addSubview(pushButton)
         
         pushButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.width.equalTo(150)
+            make.centerX.centerY.equalToSuperview()
+            make.width.equalTo(200)
             make.height.equalTo(40)
-            make.bottom.equalToSuperview().inset(40)
         }
     }
 }

@@ -33,5 +33,4 @@ class GalleryViewModel {
     func image(at index: Int) -> ImageModel {
         return image[index]
     }
-    
 }
