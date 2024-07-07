@@ -10,5 +10,7 @@
 - в качестве бэкенда используется публичный REST API, http://jsonplaceholder.typicode.com
   
   ЯП Swift, UIKit
+
+  
 https://github.com/n1k1takozhukhov/task/assets/146763925/618e308c-c868-4513-83b5-47d1dac339e0
 
