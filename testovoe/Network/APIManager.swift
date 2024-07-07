@@ -26,8 +26,8 @@ final class APIManager: APIManagerProtocol {
             }
             
             do {
-                let photos = try JSONDecoder().decode([ImageModel].self, from: data)
-                completion(.success(photos))
+                let image = try JSONDecoder().decode([ImageModel].self, from: data)
+                completion(.success(image))
             } catch {
                 completion(.failure(error))
             }
