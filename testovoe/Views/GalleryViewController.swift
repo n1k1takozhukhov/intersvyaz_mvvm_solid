@@ -25,6 +25,7 @@ final class GalleryViewController: UIViewController {
     private func updateUI() {
         title = "GalleryViewController"
         view.backgroundColor = .systemBackground
+        
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.dataSource = self
         collectionView.delegate = self

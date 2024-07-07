@@ -18,6 +18,7 @@ final class StartViewController: UIViewController {
     //MARK: Selectors
     private func updateUI() {
         view.backgroundColor = .systemBackground
+        
         pushButton.setTitle("view gallery".uppercased(), for: .normal)
         pushButton.tintColor = .systemBlue
     }

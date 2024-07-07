@@ -12,6 +12,7 @@ class GalleryViewModel {
         self.imageManager = imageManager
     }
     
+    
     //MARK: Selectors
     func fetchImage() {
         imageManager.fetchImage { [weak self] result in
