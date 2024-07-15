@@ -66,7 +66,7 @@ extension GalleryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImageCell
-        let image = viewModel.image(at: indexPath.row)
+        let image = viewModel.viewModelForImage(at: indexPath.row)
         cell.configure(with: image)
         return cell
     }
@@ -76,8 +76,8 @@ extension GalleryViewController: UICollectionViewDataSource {
 //MARK: - UICollectionViewDelegate
 extension GalleryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectImage = viewModel.image(at: indexPath.row)
-        let viewDetail = ImageDetailViewController(imageModel: selectImage)
+        let selectImage = viewModel.viewModelForImage(at: indexPath.row)
+        let viewDetail = ImageDetailViewController(imageViewModel: selectImage)
         self.navigationController?.pushViewController(viewDetail, animated: true)
     }
 }

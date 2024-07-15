@@ -20,7 +20,7 @@ final class GalleryViewModel {
             case .success(let image):
                 self?.image = image
                 self?.reloadCollectionView?()
-            
+                
             case .failure(_):
                 print("er")
             }
@@ -33,5 +33,10 @@ final class GalleryViewModel {
     
     func image(at index: Int) -> ImageModel {
         return image[index]
+    }
+    
+    func viewModelForImage(at index: Int) -> ImageCellViewModel {
+        let imageModel = image(at: index)
+        return ImageCellViewModel(imageModel: imageModel)
     }
 }

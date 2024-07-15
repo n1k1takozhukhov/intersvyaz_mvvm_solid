@@ -4,6 +4,10 @@ import SDWebImage
 
 final class ImageCell: UICollectionViewCell {
     
+    //MARK: Variables
+    private var viewModel: ImageCellViewModel?
+
+    
     //MARK: UI Components
     private let imageView = makeImageView()
     private let activityIndicator = makeActivityIndicator()
@@ -21,9 +25,14 @@ final class ImageCell: UICollectionViewCell {
     
     
     //MARK: Selectors
-    func configure(with image: ImageModel) {
+    func configure(with viewModel: ImageCellViewModel) {
+        self.viewModel = viewModel
+        updateUI()
+    }
+    
+    private func updateUI() {
         activityIndicator.startAnimating()
-        if let url = URL(string: image.thumbnailUrl) {
+        if let url = viewModel?.thumbnailUrl {
             imageView.sd_setImage(with: url, placeholderImage: nil) { [weak self] _, _, _, _ in
                 self?.activityIndicator.stopAnimating()
             }

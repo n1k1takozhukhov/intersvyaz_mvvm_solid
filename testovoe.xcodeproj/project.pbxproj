@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D567E152C4516BD0005264F /* ImageCellViewMolde.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D567E142C4516BD0005264F /* ImageCellViewMolde.swift */; };
 		8DECD28D2C39518E0046AE74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DECD28C2C39518E0046AE74 /* AppDelegate.swift */; };
 		8DECD28F2C39518E0046AE74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DECD28E2C39518E0046AE74 /* SceneDelegate.swift */; };
 		8DECD2962C39518F0046AE74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DECD2952C39518F0046AE74 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		060AAC18AF5D944B83EE3423 /* Pods-testovoe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testovoe.debug.xcconfig"; path = "Target Support Files/Pods-testovoe/Pods-testovoe.debug.xcconfig"; sourceTree = "<group>"; };
 		064D75C7C7A66EFA5254B58E /* Pods_testovoe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testovoe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D567E142C4516BD0005264F /* ImageCellViewMolde.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellViewMolde.swift; sourceTree = "<group>"; };
 		8DECD2892C39518E0046AE74 /* testovoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testovoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DECD28C2C39518E0046AE74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DECD28E2C39518E0046AE74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				8DECD2BA2C39BE300046AE74 /* GalleryViewModel.swift */,
+				8D567E142C4516BD0005264F /* ImageCellViewMolde.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				8DECD2B52C3996F10046AE74 /* GalleryViewController.swift in Sources */,
 				8DECD2B72C39AFED0046AE74 /* ImageModel.swift in Sources */,
 				8DECD28F2C39518E0046AE74 /* SceneDelegate.swift in Sources */,
+				8D567E152C4516BD0005264F /* ImageCellViewMolde.swift in Sources */,
 				8DECD2B92C39B3AC0046AE74 /* ImageCell.swift in Sources */,
 				8DECD2C52C3A5FB70046AE74 /* ImageDetailViewController.swift in Sources */,
 				8DECD2C12C39C97E0046AE74 /* APIManager.swift in Sources */,

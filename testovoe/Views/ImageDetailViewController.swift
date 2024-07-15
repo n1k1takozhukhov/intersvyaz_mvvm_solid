@@ -4,7 +4,7 @@ import SnapKit
 final class ImageDetailViewController: UIViewController {
     
     //MARK: Variables
-    private let imageModel: ImageModel
+    private let viewModel: ImageCellViewModel
     
     
     //MARK: UI Components
@@ -14,8 +14,8 @@ final class ImageDetailViewController: UIViewController {
     
     
     //MARK: LifeCycle
-    init(imageModel: ImageModel) {
-        self.imageModel = imageModel
+    init(imageViewModel: ImageCellViewModel) {
+        self.viewModel = imageViewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,7 +27,7 @@ final class ImageDetailViewController: UIViewController {
         super.viewDidLoad()
         setupConstrain()
         updateUI()
-        setImageView(with: imageModel)
+        setImageView()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "square.and.arrow.up"),
@@ -43,12 +43,12 @@ final class ImageDetailViewController: UIViewController {
         title = "ImageDetailViewController"
         view.backgroundColor = .systemBackground
         
-        titleLabel.text = imageModel.title
+        titleLabel.text = viewModel.title
     }
     
-    private func setImageView(with image: ImageModel) {
+    private func setImageView() {
         activityIndicator.startAnimating()
-        if let url = URL(string: image.url) {
+        if let url = viewModel.fullImageUrl {
             imageView.sd_setImage(with: url) { [weak self] _, _, _, _ in
                 self?.activityIndicator.stopAnimating()
             }
