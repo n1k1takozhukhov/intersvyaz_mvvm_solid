@@ -7,7 +7,7 @@ final class ImageCell: UICollectionViewCell {
     //MARK: Variables
     private var viewModel: ImageCellViewModel?
 
-    
+     
     //MARK: UI Components
     private let imageView = makeImageView()
     private let activityIndicator = makeActivityIndicator()

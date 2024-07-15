@@ -4,7 +4,7 @@ final class ImageCellViewModel {
     
     //MARK: Variables
     private let imageModel: ImageModel
-    
+     
     var title: String {
         return imageModel.title
     }

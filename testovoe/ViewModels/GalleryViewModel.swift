@@ -21,7 +21,7 @@ final class GalleryViewModel {
                 self?.image = image
                 self?.reloadCollectionView?()
                 
-            case .failure(_):
+            case .failure(_): 
                 print("er")
             }
         }

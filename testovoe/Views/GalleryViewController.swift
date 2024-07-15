@@ -6,7 +6,7 @@ final class GalleryViewController: UIViewController {
     //MARK: Variables
     private let viewModel = GalleryViewModel()
     
-    
+     
     //MARK: UI Components
     private lazy var collectionView = makeCollectionView()
     

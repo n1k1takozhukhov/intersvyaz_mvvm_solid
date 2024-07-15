@@ -5,7 +5,7 @@ final class ImageDetailViewController: UIViewController {
     
     //MARK: Variables
     private let viewModel: ImageCellViewModel
-    
+     
     
     //MARK: UI Components
     private let imageView = makeImageView()
