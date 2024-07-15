@@ -24,7 +24,7 @@ final class StartViewController: UIViewController {
     }
     
     @objc func didTapButton() {
-        let galleryController = GalleryViewController()
+        let galleryController = GalleryViewController(viewModel: GalleryViewModel())
         self.navigationController?.pushViewController(galleryController, animated: true)
     }
 }

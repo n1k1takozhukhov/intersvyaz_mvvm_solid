@@ -4,7 +4,7 @@ import SnapKit
 final class GalleryViewController: UIViewController {
    
     //MARK: Variables
-    private let viewModel = GalleryViewModel()
+    private let viewModel: GalleryViewModel
     
      
     //MARK: UI Components
@@ -12,6 +12,15 @@ final class GalleryViewController: UIViewController {
     
     
     //MARK: LifeCycle
+    init(viewModel: GalleryViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConstrain()
