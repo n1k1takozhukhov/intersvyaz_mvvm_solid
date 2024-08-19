@@ -1,6 +1,6 @@
 import Foundation
 
-final class ImageCellViewModel {
+final class CollectionImageCellViewModel {
     
     //MARK: Variables
     private let imageModel: ImageModel

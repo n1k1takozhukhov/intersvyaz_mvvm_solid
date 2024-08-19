@@ -4,7 +4,7 @@ import SnapKit
 final class ImageDetailViewController: UIViewController {
     
     //MARK: Variables
-    private let viewModel: ImageCellViewModel
+    private let viewModel: CollectionImageCellViewModel
      
     
     //MARK: UI Components
@@ -14,7 +14,7 @@ final class ImageDetailViewController: UIViewController {
     
     
     //MARK: LifeCycle
-    init(imageViewModel: ImageCellViewModel) {
+    init(imageViewModel: CollectionImageCellViewModel) {
         self.viewModel = imageViewModel
         super.init(nibName: nil, bundle: nil)
     }

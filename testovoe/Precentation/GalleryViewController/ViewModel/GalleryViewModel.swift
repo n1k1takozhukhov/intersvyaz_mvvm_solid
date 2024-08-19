@@ -35,8 +35,8 @@ final class GalleryViewModel {
         return image[index]
     }
     
-    func viewModelForImage(at index: Int) -> ImageCellViewModel {
+    func viewModelForImage(at index: Int) -> CollectionImageCellViewModel {
         let imageModel = image(at: index)
-        return ImageCellViewModel(imageModel: imageModel)
+        return CollectionImageCellViewModel(imageModel: imageModel)
     }
 }

@@ -35,7 +35,7 @@ final class GalleryViewController: UIViewController {
         title = "GalleryViewController"
         view.backgroundColor = .systemBackground
         
-        collectionView.register(ImageCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(CollectionImageCell.self, forCellWithReuseIdentifier: CollectionImageCell.reuseIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -74,7 +74,7 @@ extension GalleryViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImageCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionImageCell.reuseIdentifier, for: indexPath) as! CollectionImageCell
         let image = viewModel.viewModelForImage(at: indexPath.row)
         cell.configure(with: image)
         return cell

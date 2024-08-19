@@ -2,10 +2,11 @@ import UIKit
 import SnapKit
 import SDWebImage
 
-final class ImageCell: UICollectionViewCell {
+final class CollectionImageCell: UICollectionViewCell {
     
     //MARK: Variables
-    private var viewModel: ImageCellViewModel?
+    private var viewModel: CollectionImageCellViewModel!
+    static let reuseIdentifier = "collectionImageCell"
 
      
     //MARK: UI Components
@@ -25,14 +26,14 @@ final class ImageCell: UICollectionViewCell {
     
     
     //MARK: Selectors
-    func configure(with viewModel: ImageCellViewModel) {
+    func configure(with viewModel: CollectionImageCellViewModel) {
         self.viewModel = viewModel
         updateUI()
     }
     
     private func updateUI() {
         activityIndicator.startAnimating()
-        if let url = viewModel?.thumbnailUrl {
+        if let url = viewModel.thumbnailUrl {
             imageView.sd_setImage(with: url, placeholderImage: nil) { [weak self] _, _, _, _ in
                 self?.activityIndicator.stopAnimating()
             }
@@ -42,7 +43,7 @@ final class ImageCell: UICollectionViewCell {
 
 
 //MARK: - Setup Constrain
-private extension ImageCell {
+private extension CollectionImageCell {
     func setupConstrain() {
         setupImageView()
         setupActivityIndicator()
@@ -67,7 +68,7 @@ private extension ImageCell {
 
 
 //MARK: - Make UI
-private extension ImageCell {
+private extension CollectionImageCell {
     static func makeImageView() -> UIImageView {
         let view = UIImageView()
         return view
